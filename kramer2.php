@@ -3,7 +3,7 @@ include "connect.php";
 
 // Проверяем, что данные были отправлены
 if ($_GET) {
-    $id = $_GET['id'] ?? '';
+    $id = $_GET['user_id'] ?? '';
 
     $a11 = $_GET['a11'] ?? '';
     $a12 = $_GET['a12'] ?? '';
@@ -56,17 +56,15 @@ if ($_GET) {
         $correct_x1 = $det1 / $det;
         $correct_x2 = $det2 / $det;
         $correct_x3 = $det3 / $det;
-        
-        // Сравнение с введёнными значениями (с погрешностью 0.001)
+
         $E = 0.001;
         $correct = (abs($x1 - $correct_x1) < $E && 
                     abs($x2 - $correct_x2) < $E && 
                     abs($x3 - $correct_x3) < $E);
         
         $res = $correct ? 1 : 0;
-        
-        // Добавляем кавычки вокруг строковых значений в SQL запросе
-        $insert = "INSERT INTO kramer (id, a11, a12, a13, a21, a22, a23, a31, a32, a33, b1, b2, b3, res) 
+
+        $insert = "INSERT INTO kramer (user_id, a11, a12, a13, a21, a22, a23, a31, a32, a33, b1, b2, b3, res) 
                    VALUES ('$id', '$a11', '$a12', '$a13', '$a21', '$a22', '$a23', '$a31', '$a32', '$a33', '$b1', '$b2', '$b3', '$res')";
         
         if (mysqli_query($conn, $insert)) {

@@ -2,7 +2,7 @@
 include "connect.php";
 
 // Получение данных из формы
-$id = $_GET['id'];
+$id = $_GET['user_id'];
 $a11 = $_GET['a11'];
 $a12 = $_GET['a12'];
 $a13 = $_GET['a13'];
@@ -40,7 +40,7 @@ if (is_numeric($id) && is_numeric($a11) && is_numeric($a12) && is_numeric($a13) 
     		echo "<h3 style='color:red;'>Введёный определитель неверный!</h3>";
     	}
     
-    $insert = "INSERT INTO det (id, a11, a12, a13, a21, a22, a23, a31, a32, a33, res) 
+    $insert = "INSERT INTO det (user_id, a11, a12, a13, a21, a22, a23, a31, a32, a33, res) 
                VALUES ($id, $a11, $a12, $a13, $a21, $a22, $a23, $a31, $a32, $a33, $res)";
     mysqli_query($conn, $insert);        
 } 

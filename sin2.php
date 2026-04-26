@@ -1,7 +1,7 @@
 <?php
 	include "connect.php";
 		
-	$id = $_GET['id'];
+	$id = $_GET['user_id'];
 	$x = $_GET['x'];
 	$sinx = $_GET['sinx'];
 	
@@ -32,7 +32,7 @@
 	$correct = (abs($sinx_new - $sinx) < $E);
 	$res = $correct ? 1 : 0;
 	
-	$insert = "INSERT INTO sin (id, sin, new_sin, res) 
+	$insert = "INSERT INTO sin (user_id, sin, new_sin, res) 
                 VALUES ('$id', '$sinx', '$sinx_new', '$res')";
 	if (mysqli_query($conn, $insert)) {
             if ($res) {

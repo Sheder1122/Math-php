@@ -15,50 +15,61 @@ $sql = "
         WHERE user_id IS NOT NULL
         GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM det
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM kramer
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM treug
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM treug_square
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM is_treug
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM treug_mbh
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM sin
-        GROUP BY id
-	  UNION ALL
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
+        UNION ALL
         SELECT user_id, COUNT(*), SUM(res)
         FROM exp
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
         SELECT user_id, COUNT(*), SUM(res)
         FROM integral
-        GROUP BY id
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM matrix_sum
-        GROUP BY id
-
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
+        
+        
         
     ) AS attempts ON u.id = attempts.user_id
     GROUP BY u.id
-    ORDER BY u.id
+    ORDER BY u.id ASC
 ";
 
 $result = mysqli_query($conn, $sql);

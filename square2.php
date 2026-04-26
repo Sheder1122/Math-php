@@ -3,7 +3,7 @@
 include "connect.php";
 
 if ($_GET) {
-    $id = $_GET['id'];
+    $id = $_GET['user_id'];
 	$a = $_GET['a'];
     $b = $_GET['b'];
     $c = $_GET['c'];
@@ -37,7 +37,7 @@ if ($_GET) {
 			      
 			      $res = $correct ? 1 : 0;
 			      
-			      $insert = "INSERT INTO treug_square  (id, a, b, c, ha, hb, hc, s, res) 
+			      $insert = "INSERT INTO treug_square  (user_id, a, b, c, ha, hb, hc, s, res) 
                    		VALUES ('$id', '$a', '$b', '$c', '$ha', '$hb', '$hc', 's', '$res')";
 		if (mysqli_query($conn, $insert)) {
             if ($res) {

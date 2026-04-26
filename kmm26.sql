@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 26 2026 г., 21:57
+-- Время создания: Апр 26 2026 г., 22:45
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `det` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `a11` double NOT NULL,
   `a12` double NOT NULL,
   `a13` double NOT NULL,
@@ -45,13 +46,8 @@ CREATE TABLE `det` (
 -- Дамп данных таблицы `det`
 --
 
-INSERT INTO `det` (`id`, `a11`, `a12`, `a13`, `a21`, `a22`, `a23`, `a31`, `a32`, `a33`, `res`) VALUES
-(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+INSERT INTO `det` (`id`, `user_id`, `a11`, `a12`, `a13`, `a21`, `a22`, `a23`, `a31`, `a32`, `a33`, `res`) VALUES
+(1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -143,6 +139,7 @@ INSERT INTO `is_treug` (`id`, `user_id`, `x1`, `y1`, `x2`, `y2`, `x3`, `y3`, `us
 
 CREATE TABLE `kramer` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `a11` double NOT NULL,
   `a12` double NOT NULL,
   `a13` double NOT NULL,
@@ -162,12 +159,8 @@ CREATE TABLE `kramer` (
 -- Дамп данных таблицы `kramer`
 --
 
-INSERT INTO `kramer` (`id`, `a11`, `a12`, `a13`, `a21`, `a22`, `a23`, `a31`, `a32`, `a33`, `b1`, `b2`, `b3`, `res`) VALUES
-(1, 1, 2, -3, 3, 2, -4, 2, -1, 0, 1, 0, -1, 1),
-(1, 1, 0, 0, 0, 2, 0, 0, 0, 3, 4, 5, 6, 0),
-(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(3, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+INSERT INTO `kramer` (`id`, `user_id`, `a11`, `a12`, `a13`, `a21`, `a22`, `a23`, `a31`, `a32`, `a33`, `b1`, `b2`, `b3`, `res`) VALUES
+(1, 3, 1, 1, 0, 0, 2, 2, 0, 0, 3, 1, 1, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -189,12 +182,8 @@ CREATE TABLE `kv_ur` (
 --
 
 INSERT INTO `kv_ur` (`id`, `user_id`, `a`, `b`, `c`, `res`) VALUES
-(0, NULL, 1, 1, 2, 0),
-(0, NULL, -1, 7, 8, 1),
-(0, NULL, -1, 7, 8, 0),
-(0, 1, 1, 2, 3, 0),
-(0, 3, 1, 2, 3, 0),
-(0, 3, 1, 2, 3, 0);
+(1, 4, 1, 2, 3, 0),
+(2, 4, 1, 2, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -204,8 +193,17 @@ INSERT INTO `kv_ur` (`id`, `user_id`, `a`, `b`, `c`, `res`) VALUES
 
 CREATE TABLE `matrix_sum` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `res` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `matrix_sum`
+--
+
+INSERT INTO `matrix_sum` (`id`, `user_id`, `res`) VALUES
+(1, 3, 1),
+(2, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -215,6 +213,7 @@ CREATE TABLE `matrix_sum` (
 
 CREATE TABLE `sin` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `sin` float NOT NULL,
   `new_sin` decimal(10,0) NOT NULL,
   `res` int(11) NOT NULL
@@ -224,16 +223,11 @@ CREATE TABLE `sin` (
 -- Дамп данных таблицы `sin`
 --
 
-INSERT INTO `sin` (`id`, `sin`, `new_sin`, `res`) VALUES
-(2, 4, 0, 0),
-(2, 4, 0, 0),
-(1, 0.84147, 0, 0),
-(1, 0.84147, 0, 0),
-(1, 0.84147, 0, 0),
-(2, 0.454649, 0, 0),
-(5, 0.454649, 0, 0),
-(5, 0.454649, 0, 1),
-(4, 0.454649, 0, 1);
+INSERT INTO `sin` (`id`, `user_id`, `sin`, `new_sin`, `res`) VALUES
+(1, 4, 0, 1, 0),
+(2, 2, 4, 0, 0),
+(3, 1, 0.84147, 0, 0),
+(4, 5, 3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -243,6 +237,7 @@ INSERT INTO `sin` (`id`, `sin`, `new_sin`, `res`) VALUES
 
 CREATE TABLE `treug` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `a` float NOT NULL,
   `b` float NOT NULL,
   `c` float NOT NULL,
@@ -256,10 +251,9 @@ CREATE TABLE `treug` (
 -- Дамп данных таблицы `treug`
 --
 
-INSERT INTO `treug` (`id`, `a`, `b`, `c`, `angle1`, `angle2`, `angle3`, `res`) VALUES
-(1, 1, 1, 1, 0, 0, 0, 0),
-(1, 1, 1, 1, 0, 0, 0, 0),
-(1, 1, 1, 1, 0, 0, 0, 1);
+INSERT INTO `treug` (`id`, `user_id`, `a`, `b`, `c`, `angle1`, `angle2`, `angle3`, `res`) VALUES
+(1, 3, 3, 3, 3, 60, 60, 60, 0),
+(2, 3, 3, 3, 3, 60, 60, 60, 1);
 
 -- --------------------------------------------------------
 
@@ -269,6 +263,7 @@ INSERT INTO `treug` (`id`, `a`, `b`, `c`, `angle1`, `angle2`, `angle3`, `res`) V
 
 CREATE TABLE `treug_mbh` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `a` double NOT NULL,
   `b` double NOT NULL,
   `c` double NOT NULL,
@@ -288,10 +283,8 @@ CREATE TABLE `treug_mbh` (
 -- Дамп данных таблицы `treug_mbh`
 --
 
-INSERT INTO `treug_mbh` (`id`, `a`, `b`, `c`, `ha`, `hb`, `hc`, `ma`, `mb`, `mc`, `ba`, `bb`, `bc`, `res`) VALUES
-(4, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(4, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(5, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `treug_mbh` (`id`, `user_id`, `a`, `b`, `c`, `ha`, `hb`, `hc`, `ma`, `mb`, `mc`, `ba`, `bb`, `bc`, `res`) VALUES
+(1, 5, 5, 5, 5, 3, 3, 3, 2, 3, 4, 5, 6, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -301,6 +294,7 @@ INSERT INTO `treug_mbh` (`id`, `a`, `b`, `c`, `ha`, `hb`, `hc`, `ma`, `mb`, `mc`
 
 CREATE TABLE `treug_square` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `a` double NOT NULL,
   `b` double NOT NULL,
   `c` double NOT NULL,
@@ -315,10 +309,8 @@ CREATE TABLE `treug_square` (
 -- Дамп данных таблицы `treug_square`
 --
 
-INSERT INTO `treug_square` (`id`, `a`, `b`, `c`, `ha`, `hb`, `hc`, `s`, `res`) VALUES
-(1, 1, 1, 1, 0, 0, 0, 0, 0),
-(4, 1, 1, 1, 0, 0, 0, 0, 0),
-(4, 1, 1, 1, 0, 0, 0, 0, 0);
+INSERT INTO `treug_square` (`id`, `user_id`, `a`, `b`, `c`, `ha`, `hb`, `hc`, `s`, `res`) VALUES
+(1, 2, 3, 3, 3, 1, 1, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -348,6 +340,12 @@ INSERT INTO `users` (`id`, `surname`, `name`) VALUES
 --
 
 --
+-- Индексы таблицы `det`
+--
+ALTER TABLE `det`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `exp`
 --
 ALTER TABLE `exp`
@@ -366,8 +364,56 @@ ALTER TABLE `is_treug`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `kramer`
+--
+ALTER TABLE `kramer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `kv_ur`
+--
+ALTER TABLE `kv_ur`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `matrix_sum`
+--
+ALTER TABLE `matrix_sum`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `sin`
+--
+ALTER TABLE `sin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `treug`
+--
+ALTER TABLE `treug`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `treug_mbh`
+--
+ALTER TABLE `treug_mbh`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `treug_square`
+--
+ALTER TABLE `treug_square`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `det`
+--
+ALTER TABLE `det`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `exp`
@@ -386,6 +432,48 @@ ALTER TABLE `integral`
 --
 ALTER TABLE `is_treug`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `kramer`
+--
+ALTER TABLE `kramer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `kv_ur`
+--
+ALTER TABLE `kv_ur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `matrix_sum`
+--
+ALTER TABLE `matrix_sum`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `sin`
+--
+ALTER TABLE `sin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `treug`
+--
+ALTER TABLE `treug`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `treug_mbh`
+--
+ALTER TABLE `treug_mbh`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `treug_square`
+--
+ALTER TABLE `treug_square`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

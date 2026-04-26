@@ -19,7 +19,7 @@
 	for ($i = 0; $i < mysqli_num_rows($q); $i++) {
 	    echo "<tr>";
 	    $f = mysqli_fetch_array($q);
-	    echo "<td align='center'><input type='radio' name='id' value='{$f['id']}' required></td>";
+	    echo "<td align='center'><input type='radio' name='user_id' value='{$f['id']}' required></td>";
 	    echo "<td align='center'>{$f['id']}</td>";
 	    echo "<td>{$f['surname']}</td>";
 	    echo "<td>{$f['name']}</td>";

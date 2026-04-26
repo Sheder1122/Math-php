@@ -3,7 +3,7 @@ include "connect.php";
 
 // Проверяем, что данные были отправлены
 if ($_GET) {
-    $id = $_GET['id'] ?? '';
+    $id = $_GET['user_id'] ?? '';
 
     $a11 = $_GET['a11'] ?? '';
     $a12 = $_GET['a12'] ?? '';
@@ -57,8 +57,8 @@ if ($_GET) {
         
         $res = $correct ? 1 : 0;
 
-        $insert = "INSERT INTO kramer (id, a11, a12, a13, a21, a22, a23, a31, a32, a33, res) 
-                   VALUES ('$id', '$a11', '$a12', '$a13', '$a21', '$a22', '$a23', '$a31', '$a32', '$a33', '$res')";
+        $insert = "INSERT INTO matrix_sum (user_id, res) 
+                   VALUES ('$id',  '$res')";
         
         if (mysqli_query($conn, $insert)) {
             if ($res) {

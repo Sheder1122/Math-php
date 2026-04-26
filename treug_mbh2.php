@@ -3,7 +3,7 @@
 include "connect.php";
 
 if ($_GET) {
-    $id = $_GET['id'];
+    $id = $_GET['user_id'];
     $a = $_GET['a'];
     $b = $_GET['b'];
     $c = $_GET['c'];
@@ -55,7 +55,7 @@ if ($_GET) {
 			      
 			      $res = $correct ? 1 : 0;
 			      
-			      $insert = "INSERT INTO TREUG_MBH  (id, a, b, c, ha, hb, hc, ma, mb, mc, ba, bb, bc, res) 
+			      $insert = "INSERT INTO TREUG_MBH  (user_id, a, b, c, ha, hb, hc, ma, mb, mc, ba, bb, bc, res) 
                    		VALUES ('$id', '$a', '$b', '$c', '$ha', '$hb', '$hc', '$ma', '$mb', '$mc', '$ba', '$bb', '$bc', '$res')";
 		if (mysqli_query($conn, $insert)) {
             if ($res) {
