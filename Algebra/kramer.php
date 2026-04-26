@@ -1,7 +1,6 @@
 <?php
-include "connect.php";
+include "../connect.php";
 
-// Добавляем открывающий тег form, которого не хватало
 echo "<form method='GET' action='kramer2.php'>";
 
 $sql = "SELECT * FROM users";
@@ -33,7 +32,7 @@ echo "<h2>Система 3x3:</h2>";
 
 echo "<table border='1' align='center' cellpadding='10'>";
 
-// Первая строка
+
 echo "<tr>";
 echo "<td> <input type='text' name='a11' size='3' value='0' required> x1 +</td>";
 echo "<td> <input type='text' name='a12' size='3' value='0' required> x2 +</td>";
@@ -41,7 +40,7 @@ echo "<td> <input type='text' name='a13' size='3' value='0' required> x3 =</td>"
 echo "<td> <input type='text' name='b1' size='3' value='0' required> </td>";
 echo "</tr>";
 
-// Вторая строка
+
 echo "<tr>";
 echo "<td> <input type='text' name='a21' size='3' value='0' required> x1 +</td>";
 echo "<td> <input type='text' name='a22' size='3' value='0' required> x2 +</td>";
@@ -49,7 +48,7 @@ echo "<td> <input type='text' name='a23' size='3' value='0' required> x3 =</td>"
 echo "<td> <input type='text' name='b2' size='3' value='0' required> </td>";
 echo "</tr>";
 
-// Третья строка
+
 echo "<tr>";
 echo "<td> <input type='text' name='a31' size='3' value='0' required>  x1 +</td>";
 echo "<td> <input type='text' name='a32' size='3' value='0' required>  x2 +</td>";
@@ -76,5 +75,5 @@ echo "<input type='reset' value='Очистить'>";
 echo "</form>";
 
 echo "<br>";
-echo "<a href='index.html'>Вернуться на главную</a>";
+echo "<a href='../index.html'>Вернуться на главную</a>";
 ?>

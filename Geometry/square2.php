@@ -1,6 +1,6 @@
 <?php
 
-include "connect.php";
+include "../connect.php";
 
 if ($_GET) {
     $id = $_GET['user_id'];
@@ -33,7 +33,7 @@ if ($_GET) {
 			      $correct = (abs($ha_new - $ha) < $E && 
 			                  abs($hb_new - $hb) < $E && 
 			                  abs($hc_new - $hc) < $E &&
-			                  abs($s_new - $s) < $S);
+			                  abs($s_new - $s) < $E);
 			      
 			      $res = $correct ? 1 : 0;
 			      

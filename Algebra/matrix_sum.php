@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+include "../connect.php";
 
 echo "<form method='GET' action='matrix_sum2.php'>";
 
@@ -114,5 +114,5 @@ echo "<input type='reset' value='Очистить'>";
 echo "</form>";
 
 echo "<br>";
-echo "<a href='index.html'>Вернуться на главную</a>";
+echo "<a href='../index.html'>Вернуться на главную</a>";
 ?>

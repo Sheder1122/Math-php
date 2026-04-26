@@ -1,5 +1,5 @@
 ﻿<?php
-include "connect.php";
+include "../connect.php";
 
 echo "<form action='kv_ur2.php' method='GET'>";
 
@@ -38,5 +38,5 @@ echo "<input type='submit' value='Проверить ответ'>";
 echo "</form>";
 
 echo "<br>";
-echo "<a href='index.html'>Вернуться на главную</a>";
+echo "<a href='../index.html'>Вернуться на главную</a>";
 ?>

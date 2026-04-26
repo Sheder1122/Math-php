@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+include "../connect.php";
 
 // Получение данных из формы
 $id = $_GET['user_id'];

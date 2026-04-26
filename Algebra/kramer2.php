@@ -1,7 +1,6 @@
 <?php
-include "connect.php";
+include "../connect.php";
 
-// Проверяем, что данные были отправлены
 if ($_GET) {
     $id = $_GET['user_id'] ?? '';
 

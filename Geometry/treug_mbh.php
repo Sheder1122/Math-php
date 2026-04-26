@@ -1,7 +1,7 @@
 <?php
-include "connect.php";
-	
-echo "<form method='GET' action='square2.php'>";
+include "../connect.php";
+
+echo "<form method='GET' action='treug_mbh2.php'>";
 	
 $sql = "SELECT * FROM users";
 $q = mysqli_query($conn, $sql);
@@ -35,7 +35,7 @@ echo "<td> Сторона Б = <input type='text' name='b' size='3' value='0' re
 echo "<td> Сторона В = <input type='text' name='c' size='3' value='0' required></td> <br>";
 
 
-echo "<h2>Введите найденные вами длины высот:</h2>";
+echo "<h2>Введите найденные вами высоты:</h2>";
 
 echo "<tr>";
 echo "<td> Высота угла А = <input type='text' name='ha' size='3' value='0' required></td> <br>";
@@ -43,10 +43,21 @@ echo "<td> Высота угла Б = <input type='text' name='hb' size='3' valu
 echo "<td> Высота угла В = <input type='text' name='hc' size='3' value='0' required></td> <br>";
 echo "</tr>";
 
-echo "<h2>Введите найденную площадь:</h2>";
+echo "<h2>Введите найденные вами медианы:</h2>";
 
-echo "<td> S =  <input type='text' name='s' size='3' value='0' required></td> <br>";
+echo "<tr>";
+echo "<td> Медиана угла А = <input type='text' name='ma' size='3' value='0' required></td> <br>";
+echo "<td> Медиана угла Б = <input type='text' name='mb' size='3' value='0' required></td> <br>";
+echo "<td> Медиана угла В = <input type='text' name='mc' size='3' value='0' required></td> <br>";
+echo "</tr>";
 
+echo "<h2>Введите найденные вами биссектрисы:</h2>";
+
+echo "<tr>";
+echo "<td> Биссектриса угла А = <input type='text' name='ba' size='3' value='0' required></td> <br>";
+echo "<td> Биссектриса  угла Б = <input type='text' name='bb' size='3' value='0' required></td> <br>";
+echo "<td> Биссектриса  угла В = <input type='text' name='bc' size='3' value='0' required></td> <br>";
+echo "</tr>";
 
 echo "<br>";
 echo "<input type='submit' value='Проверить ответ'>";
@@ -56,5 +67,6 @@ echo "</form>";
 
 	
 echo "<br>";
-echo "<a href='index.html'>Вернуться на главную</a>";
+echo "<a href='../index.html'>Вернуться на главную</a>";
 ?>
+

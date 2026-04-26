@@ -1,39 +1,29 @@
 <?php
-	include "connect.php";
+	include "../connect.php";
 		
 	$id = $_GET['user_id'];
 	$x = $_GET['x'];
-	$sinx = $_GET['sinx'];
+	$ex = $_GET['ex'];
 	
 	$E = 0.001;
-	$k = 1;
-	
-	$sinx_new = 1;
 	
 	function factorial($n){
 		if ($n <= 1) return 1;
 		return $n * factorial($n - 1);
 	}
-
-
 	
-	for ($i = 2; $i < 100; $i +=2){
-		if ($k % 2 != 0){
-			$sinx_new -= pow($x,$i) / factorial($i+1);
-		}
-		else{
-			$sinx_new += pow($x,$i) / factorial($i+1);
-		}
-		$k++;
+	$N = 0;
+	$ex_new = 1 + $x;
+	
+	for($i = 2; $i < 100; $i++){
+		$ex_new += pow($x, $i) / factorial($i);   
 	}
 	
-
-	
-	$correct = (abs($sinx_new - $sinx) < $E);
+	$correct = (abs($ex_new - $ex) < $E);
 	$res = $correct ? 1 : 0;
-	
-	$insert = "INSERT INTO sin (user_id, sin, new_sin, res) 
-                VALUES ('$id', '$sinx', '$sinx_new', '$res')";
+
+	$insert = "INSERT INTO exp (user_id, ex, ex_new, res) 
+                VALUES ('$id', '$ex', '$ex_new', '$res')";
 	if (mysqli_query($conn, $insert)) {
             if ($res) {
                 echo "<h3 style='color:green;'>Введённые значения верны!</h3>";
@@ -42,6 +32,10 @@
             }
 	}
 
-	include "sin.php";
+	include "exp.php";
+
+
+
 
 ?>
+

@@ -1,8 +1,8 @@
 <?php
-include "connect.php";
-	
-echo "<form method='GET' action='exp2.php'>";
-	
+include "../connect.php";
+
+echo "<form method='GET' action='integral2.php'>";
+
 $sql = "SELECT * FROM users";
 $q = mysqli_query($conn, $sql);
 
@@ -27,11 +27,16 @@ for ($i = 0; $i < mysqli_num_rows($q); $i++) {
 echo "</table>";
 
 echo "<br>";
-echo "<h1>Нахождение корня экспоненты</h1>";
-echo "<h2>Введите значения:</h2>";
+echo "<h1>Решение неопределённного интеграла</h1>";
+echo "<h2>Введите интегралл и первообразную:</h2>";
 
-echo "<td> Значение икса = <input type='text' name='x' size='3' value='0' required></td> <br>";
-echo "<td> Вычисленное значение = <input type='text' name='ex' size='3' value='0' required></td> <br>";
+echo "<h3>При возведении в степень используйте x*x | sin(x) | cos(x) | log(x) и т.д </h3>";
+echo "Интеграл = <input type='text' name='func' size='40' placeholder='например: x*x' required> <br>";
+echo "<br>";
+echo "Первообразная = <input type='text' name='perv' size='40' placeholder='x*x*x/3' required> <br>";
+
+
+
 
 
 echo "<br>";
@@ -40,9 +45,6 @@ echo " ";
 echo "<input type='reset' value='Очистить'>";
 echo "</form>";
 
-	
-
-	
 echo "<br>";
-echo "<a href='index.html'>Вернуться на главную</a>";
+echo "<a href='../index.html'>Вернуться на главную</a>";
 ?>

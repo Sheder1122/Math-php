@@ -1,6 +1,6 @@
 <?php
 
-include "connect.php";
+include "../connect.php";
 
 if ($_GET) {
     $id = $_GET['user_id'];

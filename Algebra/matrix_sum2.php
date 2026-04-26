@@ -1,7 +1,6 @@
 <?php
-include "connect.php";
+include "../connect.php";
 
-// Проверяем, что данные были отправлены
 if ($_GET) {
     $id = $_GET['user_id'] ?? '';
 
@@ -46,7 +45,7 @@ if ($_GET) {
         $d22 = $a22 + $b22;
         $d23 = $a23 + $b23;
         $d31 = $a31 + $b31;
-        $d33 = $a32 + $b32;
+        $d32 = $a32 + $b32;
         $d33 = $a33 + $b33;
         	   
         

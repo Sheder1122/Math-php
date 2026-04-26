@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+include "../connect.php";
 
 $user_id = $_GET['user_id'] ?? '';
 $x1 = $_GET['x1'] ?? '';
