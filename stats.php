@@ -43,7 +43,7 @@ $sql = "
         FROM sin
         GROUP BY id
 	  UNION ALL
-        SELECT id, COUNT(*), SUM(res)
+        SELECT user_id, COUNT(*), SUM(res)
         FROM exp
         GROUP BY id
         UNION ALL

@@ -1,7 +1,7 @@
 <?php
 	include "connect.php";
 		
-	$id = $_GET['id'];
+	$id = $_GET['user_id'];
 	$x = $_GET['x'];
 	$ex = $_GET['ex'];
 	
@@ -22,7 +22,7 @@
 	$correct = (abs($ex_new - $ex) < $E);
 	$res = $correct ? 1 : 0;
 	
-	$insert = "INSERT INTO exp (id, ex, ex_new, res) 
+	$insert = "INSERT INTO exp (user_id, ex, ex_new, res) 
                 VALUES ('$id', '$ex', 'ex_new', '$res')";
 	if (mysqli_query($conn, $insert)) {
             if ($res) {
