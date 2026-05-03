@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 26 2026 г., 22:45
+-- Время создания: Май 03 2026 г., 13:19
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- База данных: `kmm26`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `definite_integral`
+--
+
+CREATE TABLE `definite_integral` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `func` varchar(255) NOT NULL,
+  `a` double NOT NULL,
+  `b` double NOT NULL,
+  `user_answer` double NOT NULL,
+  `correct_answer` double NOT NULL,
+  `res` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `definite_integral`
+--
+
+INSERT INTO `definite_integral` (`id`, `user_id`, `func`, `a`, `b`, `user_answer`, `correct_answer`, `res`) VALUES
+(1, 2, 'x*x', 0, 1, 2, 0.33333333333333, 0);
 
 -- --------------------------------------------------------
 
@@ -48,6 +72,34 @@ CREATE TABLE `det` (
 
 INSERT INTO `det` (`id`, `user_id`, `a11`, `a12`, `a13`, `a21`, `a22`, `a23`, `a31`, `a32`, `a33`, `res`) VALUES
 (1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `double_integral`
+--
+
+CREATE TABLE `double_integral` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `func` varchar(255) NOT NULL,
+  `ax` double NOT NULL COMMENT 'Нижний предел по x',
+  `bx` double NOT NULL COMMENT 'Верхний предел по x',
+  `ay` double NOT NULL COMMENT 'Нижний предел по y',
+  `by` double NOT NULL COMMENT 'Верхний предел по y',
+  `user_answer` double NOT NULL,
+  `correct_answer` double NOT NULL,
+  `res` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `double_integral`
+--
+
+INSERT INTO `double_integral` (`id`, `user_id`, `func`, `ax`, `bx`, `ay`, `by`, `user_answer`, `correct_answer`, `res`) VALUES
+(1, 1, 'x+y', 0, 1, 0, 1, 1, 1, 1),
+(2, 5, 'x*y', 0, 2, 0, 3, 9, 9, 1),
+(3, 1, 'sin(x)*cos(y)', 0, 1, 0, 1, 1, 0.38682227146901, 0);
 
 -- --------------------------------------------------------
 
@@ -101,7 +153,10 @@ INSERT INTO `integral` (`id`, `user_id`, `func`, `user_answer`, `res`) VALUES
 (7, 4, 'func', 'answer', 0),
 (8, 2, 'func', 'answer', 1),
 (9, 4, 'func', 'answer', 0),
-(10, 5, 'func', 'answer', 1);
+(10, 5, 'func', 'answer', 1),
+(11, 4, 'func', 'answer', 1),
+(12, 2, 'x^3', 'x*x', 0),
+(13, 5, 'x^2', 'x*x*x/3', 1);
 
 -- --------------------------------------------------------
 
@@ -188,6 +243,42 @@ INSERT INTO `kv_ur` (`id`, `user_id`, `a`, `b`, `c`, `res`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `matrix_rank`
+--
+
+CREATE TABLE `matrix_rank` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `a11` double NOT NULL,
+  `a12` double NOT NULL,
+  `a13` double NOT NULL,
+  `a21` double NOT NULL,
+  `a22` double NOT NULL,
+  `a23` double NOT NULL,
+  `a31` double NOT NULL,
+  `a32` double NOT NULL,
+  `a33` double NOT NULL,
+  `user_rank` int(11) NOT NULL,
+  `correct_rank` int(11) NOT NULL,
+  `res` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `matrix_rank`
+--
+
+INSERT INTO `matrix_rank` (`id`, `user_id`, `a11`, `a12`, `a13`, `a21`, `a22`, `a23`, `a31`, `a32`, `a33`, `user_rank`, `correct_rank`, `res`) VALUES
+(1, 3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1),
+(2, 3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1),
+(3, 3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1),
+(4, 3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1),
+(5, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1),
+(6, 2, 1, 1, 0, 0, 1, 1, 0, 0, 0, 2, 2, 1),
+(7, 5, 2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 3, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `matrix_sum`
 --
 
@@ -203,7 +294,13 @@ CREATE TABLE `matrix_sum` (
 
 INSERT INTO `matrix_sum` (`id`, `user_id`, `res`) VALUES
 (1, 3, 1),
-(2, 3, 1);
+(2, 3, 1),
+(3, 2, 0),
+(4, 3, 0),
+(5, 3, 0),
+(6, 4, 0),
+(7, 4, 1),
+(8, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -340,9 +437,21 @@ INSERT INTO `users` (`id`, `surname`, `name`) VALUES
 --
 
 --
+-- Индексы таблицы `definite_integral`
+--
+ALTER TABLE `definite_integral`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `det`
 --
 ALTER TABLE `det`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `double_integral`
+--
+ALTER TABLE `double_integral`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -373,6 +482,12 @@ ALTER TABLE `kramer`
 -- Индексы таблицы `kv_ur`
 --
 ALTER TABLE `kv_ur`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `matrix_rank`
+--
+ALTER TABLE `matrix_rank`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -410,10 +525,22 @@ ALTER TABLE `treug_square`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `definite_integral`
+--
+ALTER TABLE `definite_integral`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `det`
 --
 ALTER TABLE `det`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `double_integral`
+--
+ALTER TABLE `double_integral`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `exp`
@@ -425,7 +552,7 @@ ALTER TABLE `exp`
 -- AUTO_INCREMENT для таблицы `integral`
 --
 ALTER TABLE `integral`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `is_treug`
@@ -446,10 +573,16 @@ ALTER TABLE `kv_ur`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT для таблицы `matrix_rank`
+--
+ALTER TABLE `matrix_rank`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT для таблицы `matrix_sum`
 --
 ALTER TABLE `matrix_sum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `sin`

@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+include "../connect.php";
 
 $sql = "
     SELECT 
@@ -64,6 +64,21 @@ $sql = "
         FROM matrix_sum
         WHERE user_id IS NOT NULL
         GROUP BY user_id
+        UNION ALL
+        SELECT user_id, COUNT(*), SUM(res)
+        FROM definite_integral
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
+        UNION ALL
+        SELECT user_id, COUNT(*), SUM(res)
+        FROM double_integral
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
+        UNION ALL
+        SELECT user_id, COUNT(*), SUM(res)
+        FROM matrix_rank
+        WHERE user_id IS NOT NULL
+        GROUP BY user_id
         
         
         
@@ -115,7 +130,7 @@ $result = mysqli_query($conn, $sql);
     </table>
     <br>
     <div align="center">
-        <a href="index.html">Вернуться на главную</a>
+        <a href="../index.html">Вернуться на главную</a>
     </div>
 </body>
 </html>

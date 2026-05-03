@@ -1,5 +1,5 @@
 <?php
-	include "connect.php";
+include "../connect.php";
   
 	$sql = "SELECT * FROM users";
 	$q = mysqli_query($conn, $sql);
@@ -21,4 +21,7 @@
 	echo "</br>";
 	echo "<input type=submit value=Удалить>";
 	echo "</form>";
+
+echo "<br>";
+echo "<a href='../index.html'>Вернуться на главную</a>";
 ?>

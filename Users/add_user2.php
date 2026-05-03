@@ -1,5 +1,5 @@
 <?php
-  include "connect.php";
+include "../connect.php";
   $surname=$_GET['surname'];
   $name=$_GET['name'];
 
@@ -16,5 +16,5 @@
     		"($i,'$surname','$name')";
  	$q=mysqli_query($conn, $sql);
  	
-  include('add_user.php');
+  include 'add_user.php';
 ?>

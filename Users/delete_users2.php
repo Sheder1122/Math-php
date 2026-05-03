@@ -1,5 +1,6 @@
 <?php
-  include "connect.php";
+include "../connect.php";
+
   $a=$_GET['checkbox'];
   if (empty($a))
     echo "<h1>Ничего не выбрано</h1>";

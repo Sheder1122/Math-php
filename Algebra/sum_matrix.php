@@ -1,7 +1,7 @@
 <?php
 include "../connect.php";
 
-echo "<form method='GET' action='matrix_sum2.php'>";
+echo "<form method='GET' action='sum_matrix2.php'>";
 
 $sql = "SELECT * FROM users";
 $q = mysqli_query($conn, $sql);

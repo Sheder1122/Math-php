@@ -1,5 +1,5 @@
 <?php
-	include "connect.php";
+include "../connect.php";
 	
 	echo "<form action='updateuser2.php' method='GET'>";
 	
@@ -38,5 +38,5 @@
 	echo "</form>";
 	
 	echo "<br>";
-	echo "<a href='index.html'>Вернуться на главную</a>";
+	echo "<a href='../index.html'>Вернуться на главную</a>";
 ?>

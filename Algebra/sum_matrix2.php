@@ -50,9 +50,9 @@ if ($_GET) {
         	   
         
         $E = 0.001;
-        $correct = (abs($a11 - $c11) < $E && abs($a12 - $c12) < $E && abs($a13 - $c13) < $E 
-        && abs($a21 - $c21) < $E && abs($a22 - $c11) < $E && abs($a23 - $c23) < $E 
-        && abs($a31 - $c31) < $E && abs($a32 - $c32) < $E && abs($a33 - $c33) < $E);
+        $correct = (abs($d11 - $c11) < $E && abs($d12 - $c12) < $E && abs($d13 - $c13) < $E
+        && abs($d21 - $c21) < $E && abs($d22 - $c22) < $E && abs($d23 - $c23) < $E
+        && abs($d31 - $c31) < $E && abs($d32 - $c32) < $E && abs($d33 - $c33) < $E);
         
         $res = $correct ? 1 : 0;
 
@@ -70,5 +70,5 @@ if ($_GET) {
         }
     }
 
-include "matrix_sum.php";
+include "sum_matrix.php";
 ?>

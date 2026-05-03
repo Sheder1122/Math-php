@@ -54,7 +54,7 @@ if (!empty($user_id) && is_numeric($user_id) && !empty($func) && !empty($answer)
 $res = $correct ? 1 :0;
 
 $insert = "INSERT INTO integral  (user_id, func, user_answer, res) 
-     		VALUES ('$user_id', 'func', 'answer',  '$res')";
+     		VALUES ('$user_id', '$func', '$answer',  '$res')";
 		if (mysqli_query($conn, $insert)) {
             if ($res) {
                 echo "<h3 style='color:green;'>Введённые значения верны!</h3>";

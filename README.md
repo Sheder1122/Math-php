@@ -1,11 +1,11 @@
 Учебный проект создан в рамках курса по web-разработке на PHP.
 
-# 📐 Math Learning System (PHP/MySQL)
+#  Math Learning System (PHP/MySQL)
 
 Учебное веб-приложение для решения и проверки математических задач по алгебре, геометрии и математическому анализу.  
 Пользователи могут проходить задания, а система сохраняет результаты и формирует статистику успеваемости.
 
-## 🚀 Функционал
+## Функционал:
 
 ### Управление пользователями
 - Добавление нового пользователя
@@ -37,23 +37,26 @@
 ## 📁 Структура проекта
 ```
 ├── connect.php         # Подключение к БД
-├── users.php           # Вывод списка пользователей
-├── add_user.php        # Форма добавления пользователя
-├── add_user2.php       # Обработчик добавления
-├── delete_users.php    # Форма удаления (чекбоксы)
-├── delete_users2.php   # Обработчик удаления
-├── updateuser.php      # Форма редактирования
-├── updateuser2.php     # Обработчик обновления
-├── stats.php           # Страница статистики (с агрегирующим JOIN)
 ├── index.html          # Главное меню
 │
+├── Users:
+│   ├── users.php           # Вывод списка пользователей
+│   ├── add_user.php        # Форма добавления пользователя
+│   ├── add_user2.php       # Обработчик добавления
+│   ├── delete_users.php    # Форма удаления (чекбоксы)
+│   ├── delete_users2.php   # Обработчик удаления
+│   ├── updateuser.php      # Форма редактирования
+│   ├── updateuser2.php     # Обработчик обновления
+│   └── stats.php           # Страница статистики 
+│
 ├── Algebra:
-│   ├── kv_ur.php / kv_ur2.php         # Квадратное уравнение
-│   ├── det.php / det2.php             # Определитель 3×3
-│   ├── kramer.php / kramer2.php       # Метод Крамера
-│   ├── matrix_sum.php / matrix_sum2.php  # Сумма матриц
-│   ├── sin.php / sin2.php             # sin(x)/x
-│   └── exp.php / exp2.php             # Экспонента
+│   ├── kv_ur.php / kv_ur2.php              # Квадратное уравнение
+│   ├── det.php / det2.php                  # Определитель 3×3
+│   ├── kramer.php / kramer2.php            # Метод Крамера
+│   ├── sum_matrix.php / sum_matrix2.php    # Сумма матриц
+│   ├── rank_matrix.php / rank_matrix2.php  # Вычисление ранга матрицы
+│   ├── sin.php / sin2.php                  # sin(x)/x
+│   └── exp.php / exp2.php                  # Экспонента
 │ 
 ├── Geometry:
 │   ├── treug.php / treug2.php         # Углы треугольника
@@ -62,10 +65,13 @@
 │   └── is_treug.php / is_treug2.php   # Тип треугольника по координатам
 │
 ├── Math-analysis:
-│   └── integral.php / integral2.php   # Интегралы (проверка производной)
+│   ├── integral.php / integral2.php                        # Решение неопределённого нтегралы 
+│   ├── definite_integral.php /  definite_integral2.php     # Решение определённого интеграла
+│   └── dobule_integral.php / dobule_integral2.php          # Решение двойного определённого интеграла
 │
 │
-└── kmm26.sql                          # Дамп всех таблиц 
+└── DataBase:
+    └── kmm26.sql                       # Дамп всех таблиц 
 ```
 
 Все таблицы содержат поле `res` (0/1) – правильность ответа.
