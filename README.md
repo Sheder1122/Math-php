@@ -27,6 +27,7 @@
 - **Вычисление площади и высот** треугольника
 - **Вычисление медиан, высот и биссектрис** треугольника
 - **Определение типа треугольника** (прямоугольный, остроугольный, тупоугольный) по координатам вершин
+- **Радиусы вписанной и описанной окружностей** – вычисление по координатам вершин, с проверкой существования треугольника
 
 ### Задачи математического анализа
 - **Неопределённые интегралы** – проверка введённой первообразной численным дифференцированием
@@ -45,26 +46,27 @@
 ├── index.html          # Главное меню
 │
 ├── Users:
-│   ├── users.php                               # Вывод списка пользователей
-│   ├── stats.php                               # Страница статистики 
-│   ├── add_user.php /  add_user2.php           # Добавление нового пользователя
-│   ├── delete_users.php / delete_users2.php    # Удаление пользователей
-│   └── updateuser.php / updateuser2.php        # Редактирование пользователей    
+│   ├── users.php                                       # Вывод списка пользователей
+│   ├── stats.php                                       # Страница статистики 
+│   ├── add_user.php /  add_user2.php                   # Добавление нового пользователя
+│   ├── delete_users.php / delete_users2.php            # Удаление пользователей
+│   └── updateuser.php / updateuser2.php                # Редактирование пользователей    
 │
 ├── Algebra:
-│   ├── kv_ur.php / kv_ur2.php                  # Квадратное уравнение
-│   ├── det.php / det2.php                      # Определитель 3×3
-│   ├── kramer.php / kramer2.php                # Метод Крамера
-│   ├── sum_matrix.php / sum_matrix2.php        # Сумма матриц
-│   ├── rank_matrix.php / rank_matrix2.php      # Вычисление ранга матрицы
-│   ├── sin.php / sin2.php                      # sin(x)/x
-│   └── exp.php / exp2.php                      # Экспонента
+│   ├── kv_ur.php / kv_ur2.php                          # Квадратное уравнение
+│   ├── det.php / det2.php                              # Определитель 3×3
+│   ├── kramer.php / kramer2.php                        # Метод Крамера
+│   ├── sum_matrix.php / sum_matrix2.php                # Сумма матриц
+│   ├── rank_matrix.php / rank_matrix2.php              # Вычисление ранга матрицы
+│   ├── sin.php / sin2.php                              # sin(x)/x
+│   └── exp.php / exp2.php                              # Экспонента
 │ 
 ├── Geometry:
-│   ├── treug.php / treug2.php                  # Углы треугольника
-│   ├── square.php / square2.php                # Площадь и высоты
-│   ├── treug_mbh.php / treug_mbh2.php          # Медианы/высоты/биссектрисы
-│   └── is_treug.php / is_treug2.php            # Тип треугольника по координатам
+│   ├── treug.php / treug2.php                          # Углы треугольника
+│   ├── square.php / square2.php                        # Площадь и высоты
+│   ├── treug_mbh.php / treug_mbh2.php                  # Медианы/высоты/биссектрисы
+│   ├── is_treug.php / is_treug2.php                    # Тип треугольника по координатам
+│   └── triangle_circles.php / triangle_circles2.php    # Радиусы окружностей
 │
 ├── Math-analysis:
 │   ├── integral.php / integral2.php                        # Решение неопределённого нтегралы 
