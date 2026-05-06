@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 03 2026 г., 13:19
+-- Время создания: Май 06 2026 г., 17:32
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -412,6 +412,36 @@ INSERT INTO `treug_square` (`id`, `user_id`, `a`, `b`, `c`, `ha`, `hb`, `hc`, `s
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `triangle_circles`
+--
+
+CREATE TABLE `triangle_circles` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `x1` double NOT NULL,
+  `y1` double NOT NULL,
+  `x2` double NOT NULL,
+  `y2` double NOT NULL,
+  `x3` double NOT NULL,
+  `y3` double NOT NULL,
+  `r_in_user` double NOT NULL,
+  `r_out_user` double NOT NULL,
+  `r_in` double NOT NULL,
+  `r_out` double NOT NULL,
+  `res` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `triangle_circles`
+--
+
+INSERT INTO `triangle_circles` (`id`, `user_id`, `x1`, `y1`, `x2`, `y2`, `x3`, `y3`, `r_in_user`, `r_out_user`, `r_in`, `r_out`, `res`) VALUES
+(1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 0.29289321881345, 0.70710678118655, 0),
+(2, 3, 1, 1, 2, 1, 2, 2, 0.2928932188134, 0.707106781186, 0.29289321881345, 0.70710678118655, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `users`
 --
 
@@ -521,6 +551,12 @@ ALTER TABLE `treug_square`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `triangle_circles`
+--
+ALTER TABLE `triangle_circles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -607,6 +643,12 @@ ALTER TABLE `treug_mbh`
 --
 ALTER TABLE `treug_square`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `triangle_circles`
+--
+ALTER TABLE `triangle_circles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
